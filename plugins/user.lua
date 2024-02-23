@@ -10,16 +10,6 @@ return {
   --   end,
   -- },
   {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
-    event = "User AstroFile",
-  },
-  {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
@@ -42,7 +32,7 @@ return {
         },
         suggestion = {
           enabled = true,
-          auto_trigger = false,
+          auto_trigger = true,
           debounce = 75,
           keymap = {
             accept = "<C-l>",
@@ -112,5 +102,9 @@ return {
         node_path = "node",
       }
     end,
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
   },
 }

@@ -6,6 +6,11 @@
 return {
   -- first key is the mode
   n = {
+    H = { "<cmd> TmuxNavigateLeft<CR> " },
+    -- ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR> " },
+    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR> " },
+    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR> " },
+    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR> " },
     -- second key is the lefthand side of the map
 
     -- navigate buffer tabs with `H` and `L`
