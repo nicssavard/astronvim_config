@@ -10,6 +10,11 @@ return {
   --   end,
   -- },
   {
+    "bluz71/vim-moonfly-colors",
+    as = "moonfly",
+    config = function() vim.cmd "colorscheme moonfly" end,
+  },
+  {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
@@ -66,42 +71,6 @@ return {
         "tailwindcss",
       },
     },
-  },
-  {
-    "NvChad/nvim-colorizer.lua",
-
-    event = "InsertEnter",
-    opts = {
-      user_default_options = {
-        tailwind = true,
-      },
-    },
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
-    },
-    opts = function(_, opts)
-      local format_kinds = opts.formatting.format
-      opts.formatting.format = function(entry, item)
-        format_kinds(entry, item)
-        return require("tailwindcss-colorizer-cmp").formatter(entry, item)
-      end
-    end,
-  },
-  {
-    "laytan/tailwind-sorter.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-lua/plenary.nvim" },
-    build = "cd formatter && npm i && npm run build",
-    event = "InsertEnter",
-    config = function()
-      require("tailwind-sorter").setup {
-        on_save_enabled = true,
-        on_save_pattern = { "*.html", "*.js", "*.jsx", "*.tsx", "*.twig", "*.hbs", "*.php", "*.heex", "*.astro" },
-        node_path = "node",
-      }
-    end,
   },
   {
     "christoomey/vim-tmux-navigator",
