@@ -17,7 +17,7 @@ return {
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
-    event = "InsertEnter",
+    -- event = "InsertEnter",
     config = function()
       require("copilot").setup {
         panel = {
@@ -66,11 +66,11 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    ops = {
-      servers = {
-        "tailwindcss",
-      },
-    },
+    -- ops = {
+    --   servers = {
+    --     "tailwindcss",
+    --   },
+    -- },
   },
   {
     "christoomey/vim-tmux-navigator",
